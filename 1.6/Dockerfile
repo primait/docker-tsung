@@ -1,7 +1,5 @@
 FROM erlang:18
 
-MAINTAINER Andrea Usuelli <andreausu@gmail.com>
-
 RUN apt-get update && \
     apt-get install -y python perl libtemplate-perl gnuplot && \
     curl http://tsung.erlang-projects.org/dist/tsung-1.6.0.tar.gz --output /tmp/tsung-1.6.0.tar.gz \
@@ -11,6 +9,7 @@ RUN apt-get update && \
     && ./configure \
     && make \
     && make install \
+	&& mv /tmp/tsung-1.6.0/tsung-1.0.dtd /tsung-1.0.dtd \
     && rm -rf /tmp/tsung*
 
 EXPOSE 8091
