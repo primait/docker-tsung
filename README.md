@@ -13,7 +13,7 @@ This image is automatically built at every push of this repository and every tim
 ## Run
 
 ```
-docker run -v /path/to/tsung.xml:/root/.tsung/tsung.xml -v /path/to/logs:/root/.tsung/log -P prima/tsung:1.6
+docker run -p 8091:8091 -v /path/to/tsung.xml:/root/.tsung/tsung.xml -v /path/to/logs:/root/.tsung/log -P prima/tsung:1.6 start
 ```
 
 Or, you can create your own derived image, with the configuration in the image itself.
